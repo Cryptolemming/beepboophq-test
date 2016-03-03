@@ -1,12 +1,8 @@
 var Botkit = require('botkit')
-var Mystery = require('game.js');
+var Mystery = require('./game.js');
 
 // Expect a SLACK_TOKEN environment variable
-var slackToken = process.env.SLACK_TOKEN
-if (!slackToken) {
-  console.error('SLACK_TOKEN is required!')
-  process.exit(1)
-}
+var slackToken = 'xoxb-24238399090-ljSWOxbmdSDUNcONbqBiMxAg'
 
 var controller = Botkit.slackbot()
 var bot = controller.spawn({

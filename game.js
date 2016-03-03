@@ -1,22 +1,21 @@
 'use strict';
 
 var criminal = {
-	features: [];
+	features: [],
 };
 
 var innocent = {
-	features: [];
+	features: [],
 };
 
 var weapon = {
-	features: [];
+	features: [],
 };
 
 var mystery = {
-	criminal: criminal;
-	innocent: innocent;
-	weapon: weapon;
-
+	criminal: criminal,
+	innocent: innocent,
+	weapon: weapon,
 };
 
 module.exports = mystery;
