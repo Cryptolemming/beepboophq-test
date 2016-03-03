@@ -1,4 +1,5 @@
 var Botkit = require('botkit')
+var Mystery = require('mystery');
 
 // Expect a SLACK_TOKEN environment variable
 var slackToken = process.env.SLACK_TOKEN
@@ -33,6 +34,11 @@ controller.hears(['hello', 'hi'], ['direct_message'], function (bot, message) {
 
 controller.hears('.*', ['mention'], function (bot, message) {
   bot.reply(message, 'You really do care about me. :heart:')
+})
+
+// Game test
+controller.hears(['who did it?'], ['direct_mention'], function (bot, message) {
+  bot.reply(message, Mystery.criminal)
 })
 
 controller.hears('help', ['direct_message', 'direct_mention'], function (bot, message) {
