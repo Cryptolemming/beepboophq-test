@@ -1,5 +1,24 @@
 var Botkit = require('botkit')
-var Mystery = require('./game.js');
+
+// Game data
+
+var criminal = {
+  features: [],
+};
+
+var innocent = {
+  features: [],
+};
+
+var weapon = {
+  features: [],
+};
+
+var mystery = {
+  criminal: criminal,
+  innocent: innocent,
+  weapon: weapon,
+};
 
 // Expect a SLACK_TOKEN environment variable
 var slackToken = 'xoxb-24238399090-ljSWOxbmdSDUNcONbqBiMxAg'
@@ -34,7 +53,7 @@ controller.hears('.*', ['mention'], function (bot, message) {
 
 // Game test
 controller.hears(['who did it?'], ['direct_mention'], function (bot, message) {
-  bot.reply(message, Mystery.criminal)
+  bot.reply(message, mystery.criminal)
 })
 
 controller.hears('help', ['direct_message', 'direct_mention'], function (bot, message) {
