@@ -1,5 +1,5 @@
 var Botkit = require('botkit')
-var Mystery = require('mystery');
+var Mystery = require('game.js');
 
 // Expect a SLACK_TOKEN environment variable
 var slackToken = process.env.SLACK_TOKEN
